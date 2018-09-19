@@ -1,5 +1,4 @@
 require 'helper'
-require 'pry'
 
 describe WeiboOAuth2::Api::V2::Base do
   let(:access_token) do
