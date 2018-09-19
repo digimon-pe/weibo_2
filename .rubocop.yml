@@ -13,6 +13,11 @@ Documentation:
 Metrics/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Max: 36
+  Exclude:
+    - spec/**/*.rb
+
 Metrics/AbcSize:
   Max: 50
 
@@ -24,7 +29,3 @@ Style/FrozenStringLiteralComment:
 
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
-
-AllCops:
-  Exclude:
-    - spec/**/*
