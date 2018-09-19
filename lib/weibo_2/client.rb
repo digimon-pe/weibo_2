@@ -5,24 +5,24 @@ module WeiboOAuth2
 
     attr_accessor :access_token
 
-    def initialize(client_id='', client_secret='', opts={}, &block)
+    def initialize(client_id = '', client_secret = '', opts = {}, &block)
       client_id = WeiboOAuth2::Config.api_key if client_id.empty?
       client_secret = WeiboOAuth2::Config.api_secret if client_secret.empty?
       super
-      @site = "https://api.weibo.com/2/"
+      @site = 'https://api.weibo.com/2/'
       @options[:authorize_url] = '/oauth2/authorize'
       @options[:token_url] = '/oauth2/access_token'
     end
 
-    def self.from_code(code, opts={}, &block)
-      client = self.new(opts, &block)
+    def self.from_code(code, opts = {}, &block)
+      client = new(opts, &block)
       client.auth_code.get_token(code)
 
       client
     end
 
-    def self.from_hash(hash, opts={}, &block)
-      client = self.new(opts, &block)
+    def self.from_hash(hash, opts = {}, &block)
+      client = new(opts, &block)
       client.get_token_from_hash(hash)
 
       client
@@ -31,39 +31,41 @@ module WeiboOAuth2
     def request(verb, url, opts = {})
       super
     rescue OAuth2::Error => e
-      error_code = e.response.parsed["error_code"]
+      error_code = e.response.parsed['error_code']
       case error_code
-      when 21315, 21316, 21317, 21327, 21332
-        raise WeiboOAuth2::Errors::UnauthorizedError.new(e.response.parsed)
-      when 10022, 10023, 10024, 20016, 20505
-        raise WeiboOAuth2::Errors::RateLimitedError.new(e.response.parsed)
-      when 10013, 10014, 20508, 21301
-        raise WeiboOAuth2::Errors::PermissionError.new(e.response.parsed)
+      when 21_315, 21_316, 21_317, 21_327, 21_332
+        raise WeiboOAuth2::Errors::UnauthorizedError.new(e.response.parsed), e.message
+      when 10_022, 10_023, 10_024, 20_016, 20_505
+        raise WeiboOAuth2::Errors::RateLimitedError.new(e.response.parsed), e.message
+      when 10_013, 10_014, 20_508, 21_301
+        raise WeiboOAuth2::Errors::PermissionError.new(e.response.parsed), e.message
       else
-        raise WeiboOAuth2::Errors::GeneralError.new(e.response.parsed)
+        raise WeiboOAuth2::Errors::GeneralError.new(e.response.parsed), e.message
       end
     end
 
-    def authorize_url(params={})
+    def authorize_url(params = {})
       params[:client_id] = @id unless params[:client_id]
       params[:response_type] = 'code' unless params[:response_type]
       params[:redirect_uri] = WeiboOAuth2::Config.redirect_uri unless params[:redirect_uri]
       super
     end
 
-    def get_token(params, access_token_opts={})
-      params = params.merge({:parse => :json})
-      access_token_opts = access_token_opts.merge({:header_format => "OAuth2 %s", :param_name => "access_token"})
+    def get_token(params, access_token_opts = {})
+      params = params.merge parse: :json
+      access_token_opts = access_token_opts.merge header_format: 'OAuth2 %s', param_name: 'access_token'
       super
     end
 
-    def get_and_restore_token(params, access_token_opts={})
-      @access_token = get_token(params, access_token_opts={})
+    def get_and_restore_token(params, access_token_opts = {})
+      @access_token = get_token(params, access_token_opts)
     end
 
     def get_token_from_hash(hash)
       access_token = hash.delete(:access_token) || hash.delete('access_token')
-      @access_token = WeiboOAuth2::AccessToken.new( self, access_token, hash.merge(:header_format => 'OAuth2 %s', :param_name => 'access_token') )
+      @access_token = WeiboOAuth2::AccessToken.new(
+        self, access_token, hash.merge(header_format: 'OAuth2 %s', param_name: 'access_token')
+      )
     end
 
     def authorized?
@@ -133,6 +135,5 @@ module WeiboOAuth2
     def location
       @location ||= WeiboOAuth2::Api::V2::Location.new(@access_token) if @access_token
     end
-
   end
 end
