@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.weibo.com/oauth2/access_token
+    body:
+      encoding: UTF-8
+      string: client_id=0000000000&client_secret=very_secret&code=hoge&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fexampel.com%2Fcallback
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Wed, 19 Sep 2018 09:06:19 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Pragma:
+      - No-cache
+      Cache-Control:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Sina-Lb:
+      - aGEuMTY4LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - NGI2ZWMzNjggMCAzNSAzNSA1IDQyCg==
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_grant","error_code":21325,"request":"/oauth2/access_token","error_uri":"/oauth2/access_token","error_description":"invalid
+        authorization code:hoge"}'
+    http_version: 
+  recorded_at: Wed, 19 Sep 2018 09:06:19 GMT
+recorded_with: VCR 4.0.0
