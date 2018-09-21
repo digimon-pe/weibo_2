@@ -1,18 +1,4 @@
 require 'helper'
-require 'pry'
-
-################################################################
-################################################################
-#            ###        ####   #########        ################
-#            ## ######## ### ##  ###### ######## ###############
-#####   ###### ########## ## ####  ### ########## ##############
-#####   ###### ########## ## ##### ### ########## ##############
-#####   ####### ######## ### ###  ##### ######## ###############
-#####   ########        ####    ########        ################
-################################################################
-######## Must delete 2.00v8XoKHCX7tREf52ac7ca1aIec9ED ##########
-######## Must delete 2.00v8XoKHCX7tRE59adab7a4dGWdRMB ##########
-################################################################
 
 describe WeiboOAuth2::Api::V2::Statuses do
   let(:api_key) { 'abc' }
@@ -29,8 +15,7 @@ describe WeiboOAuth2::Api::V2::Statuses do
   let(:access_token) do
     WeiboOAuth2::AccessToken.new(
       WeiboOAuth2::Client.new(api_key, api_secret),
-      # '2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      '2.00v8XoKHCX7tRE59adab7a4dGWdRMB',
+      '2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       header_format: 'OAuth2 %s',
       param_name: 'access_token'
     )
@@ -71,7 +56,6 @@ describe WeiboOAuth2::Api::V2::Statuses do
 
     context 'when with options' do
       let(:cassette) { "api/v2/#{request_directry}/with_options" }
-      # let(:id) { 6572738167 }
       let(:id) { 1_111_111_111 }
       before { subject }
 

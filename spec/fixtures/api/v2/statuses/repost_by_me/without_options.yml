@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.12.2
       Authorization:
-      - OAuth2 2.00v8XoKHCX7tREf52ac7ca1aIec9ED
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:

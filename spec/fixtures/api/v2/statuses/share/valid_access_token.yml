@@ -13,7 +13,7 @@ http_interactions:
       Content-Type:
       - multipart/form-data; boundary=5ba469ec
       Authorization:
-      - OAuth2 2.00v8XoKHCX7tRE59adab7a4dGWdRMB
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
