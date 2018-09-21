@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/friends_timeline/ids.json?count=5&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Thu, 20 Sep 2018 08:48:30 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Server-Ip:
+      - 10.22.6.215
+      Vary:
+      - Accept-Encoding
+      Sina-Lb:
+      - aGEuMTY4LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTcwOWMzNjggMCAzNyAzNyA1IDEyMQo=
+    body:
+      encoding: ASCII-8BIT
+      string: '{"statuses":["4286364298065515", "4286363694272860", "4286363568269591",
+        "4286363467727534", "4286362238244864"],"advertises":[],"ad":[],"hasvisible":false,"previous_cursor":4286367116352269,"next_cursor":4286361882545196,"total_number":1886,"interval":0,"uve_blank":-1}'
+    http_version: 
+  recorded_at: Thu, 20 Sep 2018 08:48:30 GMT
+recorded_with: VCR 4.0.0

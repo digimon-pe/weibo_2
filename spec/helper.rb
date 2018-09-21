@@ -21,4 +21,11 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
+def fixture_path
+  File.expand_path('fixtures', __dir__)
+end
+
+def fixture(file)
+  File.open(fixture_path + '/' + file)
+end
 require 'weibo_2'

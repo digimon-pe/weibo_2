@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/mentions.json?count=5&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00v8XoKHCX7tRE59adab7a4dGWdRMB
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Fri, 21 Sep 2018 01:13:37 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '100'
+      Connection:
+      - keep-alive
+      Sina-Lb:
+      - aGEuMTY4LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTUwOWMzNjggMCAzNyAzNyA5IDQzCg==
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[],"hasvisible":false,"previous_cursor":0,"next_cursor":0,"total_number":0,"interval":0}'
+    http_version: 
+  recorded_at: Fri, 21 Sep 2018 01:13:37 GMT
+recorded_with: VCR 4.0.0

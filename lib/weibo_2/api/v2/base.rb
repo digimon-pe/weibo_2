@@ -42,7 +42,7 @@ module WeiboOAuth2
           chunk.force_encoding(Encoding::BINARY) if chunk.respond_to? :force_encoding
         end
 
-        CRLF = "\r\n".freeze
+        CRLF = "\r\n"
 
         def build_multipart_bodies(parts, opts)
           boundary = Time.now.to_i.to_s(16)

@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/bilateral_timeline.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00v8XoKHCX7tRE59adab7a4dGWdRMB
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Fri, 21 Sep 2018 01:15:11 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Server-Ip:
+      - 10.39.58.246
+      Vary:
+      - Accept-Encoding
+      Sina-Lb:
+      - aGEuMTY5LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTQwOWMzNjggMCAzOCAzOCA0IDkyCg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"statuses":[],"advertises":[],"ad":[],"hasvisible":false,"previous_cursor":0,"next_cursor":0,"total_number":3,"interval":2000,"uve_blank":-1,"since_id":4283733160535861,"max_id":0,"has_unread":0}'
+    http_version: 
+  recorded_at: Fri, 21 Sep 2018 01:15:11 GMT
+recorded_with: VCR 4.0.0

@@ -1,5 +1,4 @@
 require 'helper'
-require 'pry'
 
 describe WeiboOAuth2::Client do
   let(:api_key) { 'abc' }

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/repost_timeline/ids.json?id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Thu, 20 Sep 2018 09:27:01 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Server-Ip:
+      - 10.39.58.246
+      Vary:
+      - Accept-Encoding
+      Sina-Lb:
+      - aGEuMTY4LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTcwOWMzNjggMCAzNiAzNiA1IDcyCg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"parameter (id)''s value invalid,expect (long), but get (),
+        see doc for more info.","error_code":10017,"request":"/2/statuses/repost_timeline/ids.json"}'
+    http_version: 
+  recorded_at: Thu, 20 Sep 2018 09:27:01 GMT
+recorded_with: VCR 4.0.0
