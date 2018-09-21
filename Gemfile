@@ -8,6 +8,8 @@ group :test do
   gem 'coveralls'
   gem 'rspec', '>= 2.6'
   gem 'simplecov', '>= 0.9'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gemspec

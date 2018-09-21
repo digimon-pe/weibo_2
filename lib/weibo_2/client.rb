@@ -2,8 +2,11 @@ require 'oauth2'
 
 module WeiboOAuth2
   class Client < OAuth2::Client
+    extend Forwardable
 
     attr_accessor :access_token
+
+    def_delegator :access_token, :validated?, :authorized?
 
     def initialize(client_id = '', client_secret = '', opts = {}, &block)
       client_id = WeiboOAuth2::Config.api_key if client_id.empty?
@@ -66,10 +69,6 @@ module WeiboOAuth2
       @access_token = WeiboOAuth2::AccessToken.new(
         self, access_token, hash.merge(header_format: 'OAuth2 %s', param_name: 'access_token')
       )
-    end
-
-    def authorized?
-      @access_token && @access_token.validated?
     end
 
     def users

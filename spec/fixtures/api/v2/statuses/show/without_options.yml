@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/show.json?id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Fri, 21 Sep 2018 01:38:11 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Server-Ip:
+      - 10.85.64.142
+      Vary:
+      - Accept-Encoding
+      Sina-Lb:
+      - aGEuMTY5LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTQwOWMzNjggMCAzNyAzNyA0IDc3Cg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"target weibo does not exist!","error_code":20101,"request":"/2/statuses/show.json"}'
+    http_version: 
+  recorded_at: Fri, 21 Sep 2018 01:38:11 GMT
+recorded_with: VCR 4.0.0

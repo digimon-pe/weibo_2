@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/statuses/repost_by_me.json?count=5&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - OAuth2 2.00vaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Thu, 20 Sep 2018 09:39:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Server-Ip:
+      - 10.39.58.34
+      Vary:
+      - Accept-Encoding
+      Sina-Lb:
+      - aGEuMTY5LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTUwOWMzNjggMCAzOCAzOCA2IDY0Cg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"reposts":[],"hasvisible":false,"previous_cursor":0,"next_cursor":0,"total_number":0,"interval":0}'
+    http_version: 
+  recorded_at: Thu, 20 Sep 2018 09:39:45 GMT
+recorded_with: VCR 4.0.0

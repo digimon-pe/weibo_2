@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.weibo.com/oauth2/access_token
+    body:
+      encoding: UTF-8
+      string: client_id=abc&client_secret=def&code=hoge&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.6.1
+      Date:
+      - Wed, 19 Sep 2018 09:06:12 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Pragma:
+      - No-cache
+      Cache-Control:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Sina-Lb:
+      - aGEuMTY5LmcxLmh5ZHMubGIuc2luYW5vZGUuY29t
+      Sina-Ts:
+      - OTcwOWMzNjggMCAzNiAzNiA5IDUzCg==
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_client","error_code":21324,"request":"/oauth2/access_token","error_uri":"/oauth2/access_token","error_description":"unknow
+        client id:abc"}'
+    http_version: 
+  recorded_at: Wed, 19 Sep 2018 09:06:13 GMT
+recorded_with: VCR 4.0.0
