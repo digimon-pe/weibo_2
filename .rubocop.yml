@@ -32,3 +32,6 @@ Style/FrozenStringLiteralComment:
 
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
+
+FormatString:
+  EnforcedStyle: percent
